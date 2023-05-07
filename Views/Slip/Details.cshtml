@@ -1,0 +1,35 @@
+﻿@model InlandMarinaData.SlipViewModel
+
+@{
+    ViewData["Title"] = "Slip Details";
+}
+
+<h2 class="text-center">Slip Details</h2>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <ul class="list-group text-center">
+            <li class="list-group-item">
+                <h4>Slip Number: @Model.Slip.ID</h4>
+            </li>
+            <li class="list-group-item">
+                <h4>Width: @Model.Slip.Width</h4>
+            </li>
+            <li class="list-group-item">
+                <h4>Length: @Model.Slip.Length</h4>
+            </li>
+            <li class="list-group-item">
+                <h4>Dock: @Model.Slip.DockID</h4>
+            </li>
+            <li class="list-group-item">
+                <form asp-action="Add" method="post">
+                    <a asp-action="Index" class="btn btn-primary">Return to Slips</a>
+                    <button type="submit" class="btn btn-primary">
+                        Lease
+                    </button>
+                    <input type="hidden" asp-for="Slip.ID" />
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\InlandMarinaData",
+    "\\InlandMarinaData\\obj",
+    "\\InlandMarinaData\\obj\\Debug",
+    "\\InlandMarinaData\\obj\\Debug\\net5.0",
+    "\\InlandMarinaData\\obj\\Debug\\net5.0\\ref",
+    "\\InlandMarinaData\\obj\\Debug\\net5.0\\refint",
+    "\\InlandMarinaData\\obj\\Release",
+    "\\InlandMarinaData\\obj\\Release\\net5.0",
+    "\\InlandMarinaMVC"
+  ],
+  "SelectedNode": "\\InlandMarinaData\\InlandMarinaContext.cs",
+  "PreviewInSolutionExplorer": false
+}

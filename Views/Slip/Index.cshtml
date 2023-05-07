@@ -1,0 +1,78 @@
+﻿@model IEnumerable<InlandMarinaData.Slip>
+
+@{
+    ViewData["Title"] = "Lease";
+}
+
+<h1>Available Slips</h1>
+
+<h4><br />Select by Dock Name</h4>
+
+<!--Links for each dock name-->
+<p>
+    @Html.ActionLink("Show records for Dock A", "Index", "Slip", new { dockID = "1" }, null)
+</p>
+<p>
+    @Html.ActionLink("Show records for Dock B", "Index", "Slip", new { dockID = "2" }, null)
+</p>
+<p>
+    @Html.ActionLink("Show records for Dock C", "Index", "Slip", new { dockID = "3" }, null)
+</p>
+
+<h3><br />Select by Dock Number</h3>
+
+<!--Dropdown list for dock numbers-->
+<p>
+    @using (Html.BeginForm("Index", "Slip", FormMethod.Get))
+    {
+        <text>Dock  </text>@Html.DropDownList("dockID", new SelectList(ViewBag.DockID))
+        <input type="submit" value="Search" />
+    }
+    <br />
+</p>
+
+<!--List view of slips-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DockID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Width)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Length)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DockID)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

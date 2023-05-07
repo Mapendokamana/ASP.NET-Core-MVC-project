@@ -1,0 +1,28 @@
+﻿<ul class="navbar-nav ml-auto">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <ul class="nav navbar-nav">
+            <li >
+                <a asp-action="Index" title="Welcome">
+                    Welcome @User.Identity.Name
+                </a>
+            </li>
+            <li >
+                <form asp-controller="Login" asp-action="Logout"
+                      asp-route-returnUrl=@Url.Action("Index", "Home")>
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+            </ul>
+            }
+            else
+            {
+            <ul class="nav navbar-nav">
+                <li>
+                    <a asp-controller="Register" asp-action="Index">Register</a>
+                </li>
+                <li>
+                    <a asp-controller="Login" asp-action="Index">Login</a>
+                </li>
+            </ul>
+            }
